@@ -10,8 +10,13 @@ p, li {
 	color: white;
 }
 
+a:hover {
+	color: #ceedfd;
+	text-decoration: underline;
+}
 
-/* homepage css */
+
+/**homepage css**/
 #homepage { 
   background: url("../images/homepage_bg.jpg") no-repeat center center fixed; 
   -webkit-background-size: cover;
@@ -31,16 +36,6 @@ p, li {
 	margin: 25px 0;
 }
 
-a:hover {
-	color: #ceedfd;
-	text-decoration: underline;
-}
-
-.pageLinks {
-	text-decoration-line: none;
-	font-size: 25px;
-}
-
 .bgImage {
 	font-size: 14px;
 }
@@ -56,12 +51,6 @@ a:hover {
 	text-align: center;
 }
 
-#links {
-	position: absolute;
-	top: 420px;
-	left: 1024px;
-}
-
 #footerHome {
 	margin: 0 0 0 50px;
 	width: fit-content;
@@ -73,7 +62,7 @@ a:hover {
 }
 
 
-/* navigation bar */
+/**navigation bar**/
 nav {
 	position: relative;
 	top: 0;
@@ -105,7 +94,7 @@ nav a:hover {
 	transition: color 0.4s ease-in-out;
 }
 
-nav a:active, summary:active {
+nav a:active, summary:active { /**translation transformation for the nav links and the references section**/
 	transform: translate(0, 3px);
 	transition: transform 0.15s ease-in-out;
 }
@@ -126,7 +115,7 @@ nav a.notActive:hover {
 }
 
 
-/* content page css */
+/**content page css**/
 .contentPage {
 	margin: 0;
 	background-color: #161B22;
@@ -145,7 +134,7 @@ nav a.notActive:hover {
 	color: #c4ebff;
 }
 
-#page1image1, #page1image3, #page2image1, #page2image2, #page3image1, #page3image3, #page4image3, #page4image5, #page4image6 {
+.imgFloatRight { /**a class for all images to be floated at the right**/
 	width: 40%;
 	max-width: 40%;
 	max-height: 100%;
@@ -153,6 +142,17 @@ nav a.notActive:hover {
 	overflow: auto;
 	float: right;
 	clear: right;
+}
+
+#page1image2 {
+	width: 36%;
+	max-width: 36%;
+	max-height: 100%;
+	object-fit: contain;
+	overflow: auto;
+	height: auto;
+	float: left;
+	clear: left;
 }
 
 #page4image1 {
@@ -172,17 +172,6 @@ nav a.notActive:hover {
 #page3image2, #page4image4 {
 	width: 40%;
 	max-width: 40%;
-	max-height: 100%;
-	object-fit: contain;
-	overflow: auto;
-	height: auto;
-	float: left;
-	clear: left;
-}
-
-#page1image2 {
-	width: 36%;
-	max-width: 36%;
 	max-height: 100%;
 	object-fit: contain;
 	overflow: auto;
@@ -244,12 +233,12 @@ details p, a {
 	color: white;
 }
 
-
 summary {
 	display: inline-block;
 	position: relative;
 }
 
+/**line animation for the references section**/
 summary::after {
 	bottom: 0;
   left: 0;
@@ -268,7 +257,8 @@ summary:hover::after {
   transform-origin: bottom left;
 }
 
-/*** footer ***/
+
+/**footer**/
 .footersubPage {
 	background-color:#14151f;
 	position: relative;
@@ -291,15 +281,9 @@ summary:hover::after {
 	color: #14151f;
 }
 
-.socmedImgSprites, .copyright {
-	width: 50%;
-	display: inline-block;
-}
-
 .footerMainSection {
 	position: relative;
 }
-
 
 .copyright {
 	position: absolute;
@@ -312,7 +296,7 @@ summary:hover::after {
 }
 
 
-		
+/**image sprites**/
 .facebook {
 	background: url('../images/imagesprites.png') no-repeat -12px -12px;
 	width: 45px;
