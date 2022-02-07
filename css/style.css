@@ -18,7 +18,6 @@ p, li {
 	-o-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
-
 	background-color: #1b1e2b;
 	position: relative;
 	margin: 0;
@@ -43,7 +42,7 @@ a:hover {
 }
 
 .bgImage {
-	font-size: 12px;
+	font-size: 14px;
 }
 
 #mainText {
@@ -84,7 +83,7 @@ nav {
 
 .navContent {
 	border-bottom: 5px solid #89bad6;
-	background-color: #1b1e2b;
+	background-color: #161B22;
 }
 
 nav a {
@@ -94,6 +93,7 @@ nav a {
 	padding: 25px 20px;
 	text-decoration: none;
 	font-size: 20px;
+	display: inline-block;
 }
 
 nav a.active {
@@ -103,6 +103,19 @@ nav a.active {
 nav a:hover {
 	color: #89bad6;
 	transition: color 0.4s ease-in-out;
+}
+
+nav a:active, summary:active {
+	transform: translate(0, 3px);
+	transition: transform 0.15s ease-in-out;
+}
+
+nav a.notActive:hover {
+	text-decoration: none;
+}
+
+.navHome a:hover {
+	color: rgba(255, 255, 255, 0.514);
 }
 
 #logo {
@@ -116,23 +129,23 @@ nav a:hover {
 /* content page css */
 .contentPage {
 	margin: 0;
-	background-color: #1b1e2b;
+	background-color: #161B22;
 	position: relative;
 }
 
-.mainSection {
+.mainSection, .footerMainSection {
 	width: 1200px;
 	max-width: 92%;
 	margin: auto;
 }
 
 .pageTitle {
-	margin: 40px 0 30px 0;
+	margin: 60px 0 30px 0;
 	font-size: 40px;
 	color: #c4ebff;
 }
 
-#image1, #image3 {
+#page1image1, #page1image3, #page2image1, #page2image2, #page3image1, #page3image3, #page4image3, #page4image5, #page4image6 {
 	width: 40%;
 	max-width: 40%;
 	max-height: 100%;
@@ -142,7 +155,32 @@ nav a:hover {
 	clear: right;
 }
 
-#image2 {
+#page4image1 {
+	width: 50%;
+	max-width: 50%;
+	max-height: 100%;
+}
+
+#page4image2 {
+	width: 30%;
+	max-width: 30%;
+	max-height: 100%;
+	display: block;
+	margin: 0 auto;
+}
+
+#page3image2, #page4image4 {
+	width: 40%;
+	max-width: 40%;
+	max-height: 100%;
+	object-fit: contain;
+	overflow: auto;
+	height: auto;
+	float: left;
+	clear: left;
+}
+
+#page1image2 {
 	width: 36%;
 	max-width: 36%;
 	max-height: 100%;
@@ -153,15 +191,23 @@ nav a:hover {
 	clear: left;
 }
 
-#section1, #section2, #section3 {
+.subSection {
 	clear: both;
 	width: 100%;
-	margin: 95px 0;
+	margin: 85px 0;
 }
 
-#definition, #example, #whyConcern {
+#definition, #whyConcern, #internetImpact, #pandemic, #whyDifferent, #emotions, #passwords, #respectText, .awareness {
 	width: 55%;
 	font-size: 18px;
+}
+
+.effects, .prevention {
+	margin: 50px 0;
+}
+
+#netiquette {
+	margin-top: 125px;
 }
 
 .videos {
@@ -174,36 +220,131 @@ h2, summary {
 	font-weight: bold;
 }
 
-div#section2 > div {
+h3 {
+	color: #c4ebff;
+	font-size: 1.2em;
+	font-weight: bold;
+}
+
+div.subSection > div, #physicalHealth, #interact {
 	width: 55%;
 	margin: 0 0 0 45%;
 }
 
 details {
-	margin: 175px 0;
+	margin: 185px 0;
 }
 
 .references {
 	font-size: 16px;
+	text-align: left;
 }
 
 details p, a {
 	color: white;
 }
 
-summary:hover {
-	text-decoration: underline;
+
+summary {
+	display: inline-block;
+	position: relative;
 }
 
+summary::after {
+	bottom: 0;
+  left: 0;
+	content: '';
+  position: absolute;
+  width: 100%;
+	height: 3px;
+  background-color: #5192be;
+	transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.4s ease-in-out;
+}
+
+summary:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+/*** footer ***/
 .footersubPage {
 	background-color:#14151f;
 	position: relative;
 	bottom: 0;
 	width: 100%;
-	padding: 30px;
-	font-size: 20px;
+	padding: 70px;
 }
 
 .footersubPage p {
-	text-align: center;
+	margin: 10px;
+	font-size: 18px;
+}
+
+.footersubPage div {
+	display: inline-block;
+	margin: 10px;
+}
+
+.footersubPage a, .footersubPage a:hover {
+	color: #14151f;
+}
+
+.socmedImgSprites, .copyright {
+	width: 50%;
+	display: inline-block;
+}
+
+.footerMainSection {
+	position: relative;
+}
+
+
+.copyright {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+}
+
+.copyright p {
+	text-align: right;
+}
+
+
+		
+.facebook {
+	background: url('../images/imagesprites.png') no-repeat -12px -12px;
+	width: 45px;
+	height: 45px;
+}
+
+.facebook:hover {
+	background: url('../images/imagesprites.png') no-repeat -12px -88px;
+	width: 45px;
+	height: 45px;
+}
+
+.twitter {
+	background: url('../images/imagesprites.png') no-repeat -102px -12px;
+	width: 45px;
+	height: 45px;
+}
+
+.twitter:hover {
+	background: url('../images/imagesprites.png') no-repeat -102px -88px;
+	width: 45px;
+	height: 45px;
+}
+
+.instagram {
+	background: url('../images/imagesprites.png') no-repeat -193px -12px;
+	width: 45px;
+	height: 45px;
+}
+
+.instagram:hover {
+	background: url('../images/imagesprites.png') no-repeat -193px -88px;
+	width: 45px;
+	height: 45px;
 }
