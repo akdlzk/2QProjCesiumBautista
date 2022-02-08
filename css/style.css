@@ -285,6 +285,10 @@ summary:hover::after {
 	position: relative;
 }
 
+.footerMainSection > section {
+	max-width: 40%;
+}
+
 .copyright {
 	position: absolute;
 	right: 0;
